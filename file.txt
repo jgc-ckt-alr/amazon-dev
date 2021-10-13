@@ -1,0 +1,3 @@
+this file have the codes for amazon and wallmart
+so push the codes to amazon and wallmart repositories
+
