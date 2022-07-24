@@ -6,14 +6,14 @@ pipeline {
         echo "building the package"
       }
     }
-   stage('Hello') {
+   stage('Deploy') {
      steps{ 
-        echo 'Hello World'
+        echo 'Deploying the package'
             }
   }
-    stage('Hello') {
+    stage('Test') {
       steps{
-        echo 'Hello World'
+        echo 'Testing the project'
             }
      }
   }
