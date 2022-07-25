@@ -3,9 +3,14 @@ pipeline {
   stages{
      stage('Git checkout'){
       steps{
-        git branch: 'development', credentialsId: '2f4bdfb7-299a-44ec-8040-c5d848fff381', url: 'https://github.com/jgc-ckt-alr/maven-web-application-1.git'
+       git credentialsId: '2f4bdfb7-299a-44ec-8040-c5d848fff381', url: 'https://github.com/jgc-ckt-alr/maven-web-application-1.git'
       }
      }
+    stage('maven build'){
+      steps{
+        sh "mvn clean package"
+      }
+   
     
     stage('build'){
       steps{
