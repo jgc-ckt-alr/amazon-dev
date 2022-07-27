@@ -1,3 +1,4 @@
+currentBuild.displayName="newapp-#"+currentBuild.number
 pipeline {
   agent any
   environment{
