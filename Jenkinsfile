@@ -13,25 +13,13 @@ pipeline {
     stage('maven build'){
       steps{
         sh "mvn clean package"
-        sh "mv target/*.war target/myweb.war"
+        
       }
     }
     stage ('deploy'){
       steps{
       
-       sshagent(['Tomcat']) {
- 
-  
-
-         sh """
-              scp  -o StrictHostKeyChecking=no target/myweb.war ec2-user@172.31.44.140:/opt/tomcat-9.0.65/webapps/
-              ssh ec2-user@172.31.44.140/opt/tomcat-9.0.65/bin/shutdown.sh
-              ssh ec2-user@172.31.44.140/opt/tomcat-9.0.65/bin/startup.sh
-              
-         
-         """
-      }
-       
+      deploy adapters: [tomcat9(credentialsId: '130dbd4a-406c-47f7-88c3-e1120451466a', path: '', url: 'http://43.205.96.50:8080/')], contextPath: '/philips', war: '**/*.war'
       }
     }
     
