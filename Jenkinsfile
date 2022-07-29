@@ -18,9 +18,11 @@ pipeline {
       }
     }
     stage('sonarqube report'){
+      steps{
       withSonarQubeEnv('sonarqube-server')
       { 
         sh "mvn sonar:sonar" 
+      }
       }
     }
         stage ('deploy'){
