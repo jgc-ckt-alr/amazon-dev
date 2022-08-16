@@ -18,8 +18,8 @@ pipeline {
         
       }
     }
-  }
-}
+  
+
     /*
     stage('sonarqube report'){
       steps{
@@ -35,9 +35,9 @@ pipeline {
       deploy adapters: [tomcat9(credentialsId: '130dbd4a-406c-47f7-88c3-e1120451466a', path: '', url: 'http://43.205.96.50:8080/')], contextPath: '/philips', war: '**/*.war'
       }
     }
-    
+    */
    
-/*
+
 stage('build'){
       steps{
         echo "building the package"
