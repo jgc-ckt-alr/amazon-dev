@@ -3,12 +3,13 @@ pipeline {
   agent any
   environment{
     PATH = "/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven-3.8.6/bin:$PATH"
+
   }
 
   stages{
      stage('Git checkout'){
       steps{
-       git credentialsId: '2f4bdfb7-299a-44ec-8040-c5d848fff381', url: 'https://github.com/jgc-ckt-alr/maven-web-application-1.git'
+        git credentialsId: '6cae6c92-2cbd-40a7-bda7-2f025d112528', url: 'https://github.com/jgc-ckt-alr/maven-web-application-1.git'
       }
      }
     stage('maven build'){
@@ -17,6 +18,9 @@ pipeline {
         
       }
     }
+  }
+}
+    /*
     stage('sonarqube report'){
       steps{
       withSonarQubeEnv('sonarqube-server')
@@ -32,7 +36,9 @@ pipeline {
       }
     }
     
-    stage('build'){
+   
+/*
+stage('build'){
       steps{
         echo "building the package"
       }
@@ -47,5 +53,6 @@ pipeline {
         echo 'Testing the project'
             }
      }
+
   }
 }
