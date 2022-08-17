@@ -1,6 +1,8 @@
 currentBuild.displayName="newapp-#"+currentBuild.number
 pipeline {
-  agent any
+  agent {
+    label 'my_new_node'
+  }
   environment{
     PATH = "/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven-3.8.6/bin:$PATH"
 
