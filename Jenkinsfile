@@ -18,7 +18,7 @@ pipeline {
         
       }
     }
-  
+  /*
     
     stage('sonarqube report'){
       steps{
@@ -36,7 +36,7 @@ pipeline {
     }
     
 
-   
+   */
 
 stage('build'){
       steps{
