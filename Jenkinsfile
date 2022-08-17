@@ -4,7 +4,8 @@ pipeline {
     label 'my_new_node'
   }
   environment{
-    PATH = "/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven-3.8.6/bin:$PATH"
+    PATH = "/home/ec2-user/node/tools/hudson.tasks.Maven_MavenInstallation/maven-3.8.6/bin
+:$PATH"
 
   }
 
